@@ -1,0 +1,12 @@
+/**
+ * 全局样式
+ */
+.app-nav-bar {
+  background-color: #2892ff !important;
+}
+.app-nav-bar .van-nav-bar__title {
+  color: #fff;
+}
+.app-nav-bar .van-icon {
+  color: #fff !important;
+}

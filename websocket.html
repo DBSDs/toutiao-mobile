@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // WebSoket通信接口 wss://echo.websocket.org
+  // WebSocet 通信模型
+
+  // 1.建立连接（拨打电话）
+  // 注意：wss://echo.websocket.org 是一个在线的测试接口,仅用于WebSocket协议测试
+  var ws = new WebSocket('wss://echo.websocket.org')
+
+  // 当连接建立成功，触发open事件
+  ws.onopen = function(etv) {
+    console.log('建立连接成功')
+    // 连接建立成功以后，就可以使用这个连接对象通信
+    // send 方法发送数据
+    ws.send('Hello WebSockets')
+  } 
+  // 当接收到对方发送的消息，触发message
+  // 我们可以通过回调函数的evt.data获取对方发送的数据内容
+  ws.onmessage = function(evt) {
+    console.log('接收到消息'+ evt.data)
+  }
+
+  ws.onclose = function(evt) {
+    console.log('连接已关闭')
+  }
+  </script>
+</body>
+</html>
